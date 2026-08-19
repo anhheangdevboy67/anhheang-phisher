@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/messages.py": {
+      "runtime": "@vercel/python"
+    }
+  }
+}
