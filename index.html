@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AnhHeang — Inbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="scanlines"></div>
+
+<main class="wrap">
+
+  <header class="topbar">
+    <div class="topbar__dot"></div>
+    <span class="topbar__label">anhheang@inbox:~$</span>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">// direct line to my terminal</p>
+    <h1 class="title">Send a message.<br><span class="title--accent">Watch it land.</span></h1>
+    <p class="sub">Type something below. It gets written straight to my inbox — and shows up the next time I run my terminal script.</p>
+  </section>
+
+  <section class="terminal" aria-hidden="true">
+    <div class="terminal__bar">
+      <span class="terminal__btn terminal__btn--r"></span>
+      <span class="terminal__btn terminal__btn--y"></span>
+      <span class="terminal__btn terminal__btn--g"></span>
+      <span class="terminal__title">inbox.py</span>
+    </div>
+    <div class="terminal__body" id="terminalBody">
+      <p class="terminal__line">$ python3 rainbow_menu.py</p>
+      <p class="terminal__line terminal__line--muted">waiting for new messages<span class="cursor">_</span></p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <form id="inboxForm" class="form" novalidate>
+      <label class="field">
+        <span class="field__label">Name</span>
+        <input class="field__input" type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required maxlength="60">
+      </label>
+
+      <label class="field">
+        <span class="field__label">Message</span>
+        <textarea class="field__input field__input--area" id="message" name="message" placeholder="Say something..." required maxlength="600" rows="4"></textarea>
+      </label>
+
+      <button class="submit" type="submit" id="submitBtn">
+        <span class="submit__text">Send message</span>
+        <span class="submit__arrow">→</span>
+      </button>
+
+      <p class="status" id="statusMsg" role="status"></p>
+    </form>
+  </section>
+
+  <footer class="foot">
+    <p>Messages are stored and read from <code id="apiHint">/api/messages</code></p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
